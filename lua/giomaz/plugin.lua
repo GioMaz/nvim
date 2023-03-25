@@ -5,9 +5,9 @@ return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
 
     use({
-        "patstockwell/vim-monokai-tasty",
+        "https://github.com/tomasr/molokai",
         config = function()
-            vim.cmd('colorscheme vim-monokai-tasty')
+            vim.cmd.colorscheme("molokai")
         end
     })
 

@@ -25,7 +25,7 @@ vim.keymap.set("n", "<C-c>", ":Vex<CR>")
 
 vim.keymap.set("n", "<C-b>", ":bNext<CR>")
 
-vim.keymap.set("n", "<C-t>", ":split \\| terminal<CR>")
+vim.keymap.set("n", "<C-t>", ":split | terminal<CR>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- map Q <Nop>
