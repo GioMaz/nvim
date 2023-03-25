@@ -1,8 +1,15 @@
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 
     use "wbthomason/packer.nvim"
+
+    use({
+        "patstockwell/vim-monokai-tasty",
+        config = function()
+            vim.cmd('colorscheme vim-monokai-tasty')
+        end
+    })
 
     use({"nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"}})
 
@@ -22,6 +29,10 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-path'},         -- Optional
             {'saadparwaiz1/cmp_luasnip'}, -- Optional
             {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},             -- Required
+            {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
 

@@ -24,3 +24,13 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.guicursor = "i:block"
 vim.opt.scrollback = 300
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 700,
+        })
+    end,
+})

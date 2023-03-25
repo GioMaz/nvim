@@ -1,6 +1,3 @@
-require("base")
-require("remap")
-require("packer")
-require("lsp")
-
--- vim.g.mapleader = " "
+require("giomaz.base")
+require("giomaz.remap")
+require("giomaz.plugin")
