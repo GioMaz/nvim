@@ -5,9 +5,9 @@ return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
 
     use({
-        "https://github.com/tomasr/molokai",
+        "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme("molokai")
+            vim.cmd.colorscheme("gruvbox")
         end
     })
 
