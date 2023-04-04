@@ -13,16 +13,6 @@ lsp.ensure_installed({
     "clangd",
 })
 
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
 lsp.setup()
 
 vim.diagnostic.config({

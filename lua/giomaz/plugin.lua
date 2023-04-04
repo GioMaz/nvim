@@ -1,40 +1,68 @@
--- vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function(use)
-
-    use "wbthomason/packer.nvim"
-
-    use({
-        "ray-x/aurora";
-        config = function()
-            vim.cmd("let g:aurora_transparent = 1");
-            vim.cmd.colorscheme("aurora")
-        end
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    use({"nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"}})
+require("lazy").setup({
+    {
+        "ray-x/aurora",
+        lazy = false,
+        config = function()
+            vim.cmd([[let g:aurora_transparent = 1]])
+            vim.cmd([[colorscheme aurora]])
+        end
+    },
 
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
+    {
+        "nvim-treesitter/nvim-treesitter",
+        cmd = "TSUpdate",
+    },
+
+    {
+        "VonHeikemen/lsp-zero.nvim",
+        dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            {"neovim/nvim-lspconfig"},             -- Required
+            {"williamboman/mason.nvim"},           -- Optional
+            {"williamboman/mason-lspconfig.nvim"}, -- Optional
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- Required
-            {'hrsh7th/cmp-nvim-lsp'},     -- Required
-            {'hrsh7th/cmp-buffer'},       -- Optional
-            {'hrsh7th/cmp-path'},         -- Optional
-            {'saadparwaiz1/cmp_luasnip'}, -- Optional
-            {'hrsh7th/cmp-nvim-lua'},     -- Optional
+            {"hrsh7th/nvim-cmp"},         -- Required
+            {"hrsh7th/cmp-nvim-lsp"},     -- Required
+            {"hrsh7th/cmp-buffer"},       -- Optional
+            {"hrsh7th/cmp-path"},         -- Optional
+            {"saadparwaiz1/cmp_luasnip"}, -- Optional
+            {"hrsh7th/cmp-nvim-lua"},     -- Optional
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},             -- Required
-            {'rafamadriz/friendly-snippets'}, -- Optional
+            {"L3MON4D3/LuaSnip"},             -- Required
+            {"rafamadriz/friendly-snippets"}, -- Optional
         }
     }
-
-end)
+},
+{
+    ui = {
+        icons = {
+            cmd = "⌘",
+            config = "🛠",
+            event = "📅",
+            ft = "📂",
+            init = "⚙",
+            keys = "🗝",
+            plugin = "🔌",
+            runtime = "💻",
+            source = "📄",
+            start = "🚀",
+            task = "📌",
+            lazy = "💤 ",
+        },
+    },
+})
