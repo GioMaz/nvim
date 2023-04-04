@@ -13,11 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "ray-x/aurora",
+        "navarasu/onedark.nvim",
         lazy = false,
+        priority = 1000,
         config = function()
-            vim.cmd([[let g:aurora_transparent = 1]])
-            vim.cmd([[colorscheme aurora]])
+            vim.cmd([[colorscheme onedark]])
         end
     },
 
