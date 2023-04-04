@@ -5,9 +5,10 @@ return require('packer').startup(function(use)
     use "wbthomason/packer.nvim"
 
     use({
-        "ellisonleao/gruvbox.nvim",
+        "ray-x/aurora";
         config = function()
-            vim.cmd.colorscheme("gruvbox")
+            vim.cmd("let g:aurora_transparent = 1");
+            vim.cmd.colorscheme("aurora")
         end
     })
 
