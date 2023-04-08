@@ -13,11 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "navarasu/onedark.nvim",
+        "ellisonleao/gruvbox.nvim";
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme onedark]])
+            vim.cmd([[colorscheme gruvbox]])
         end
     },
 
