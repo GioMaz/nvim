@@ -13,11 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "ellisonleao/gruvbox.nvim";
+        "nordtheme/vim";
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme gruvbox]])
+            vim.cmd([[colorscheme nord]])
         end
     },
 
