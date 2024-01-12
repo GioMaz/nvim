@@ -13,20 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme tokyonight]])
-        end
-    },
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        cmd = "TSUpdate",
-    },
-
-    {
         "VonHeikemen/lsp-zero.nvim",
         branch = 'v1.x',
         dependencies = {
