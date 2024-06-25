@@ -1,3 +1,3 @@
-require("giomaz.base")
-require("giomaz.remap")
-require("giomaz.plugin")
+require("base")
+require("plugin")
+require("remap")

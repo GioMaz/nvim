@@ -1,4 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+-- Auto-install lazy.nvim if not present
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -34,22 +36,4 @@ require("lazy").setup({
             {"rafamadriz/friendly-snippets"}, -- Optional
         }
     }
-},
-{
-    ui = {
-        icons = {
-            cmd = "⌘",
-            config = "🛠",
-            event = "📅",
-            ft = "📂",
-            init = "⚙",
-            keys = "🗝",
-            plugin = "🔌",
-            runtime = "💻",
-            source = "📄",
-            start = "🚀",
-            task = "📌",
-            lazy = "💤 ",
-        },
-    },
 })
