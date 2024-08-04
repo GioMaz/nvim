@@ -9,10 +9,7 @@ lsp.preset({
 })
 
 lsp.ensure_installed({
-    "lua_ls",
     "clangd",
-    "tsserver",
-    "bashls",
 })
 
 lsp.on_attach(function(client, bufnr)
