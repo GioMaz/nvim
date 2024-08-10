@@ -28,6 +28,10 @@ vim.keymap.set("n", "<C-b>", ":bNext<CR>")
 vim.keymap.set("n", "<C-t>", ":split | terminal<CR>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
+vim.keymap.set("n", "mm", ":make<CR>")
+vim.keymap.set("n", "mr", ":make run<CR>")
+vim.keymap.set("n", "mc", ":make clean<CR>")
+
 -- map Q <Nop>
 vim.keymap.set("n", "Q", "<Nop")
 
