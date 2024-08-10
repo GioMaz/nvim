@@ -32,7 +32,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "Q", "<Nop")
 
 -- autocmd TermOpen * setlocal listchars = nonumber norelativenumber
--- 
+--
 -- augroup YankHighlight
 --   autocmd!
 --   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}

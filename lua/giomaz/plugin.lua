@@ -33,23 +33,9 @@ require("lazy").setup({
             {"L3MON4D3/LuaSnip"},             -- Required
             {"rafamadriz/friendly-snippets"}, -- Optional
         }
-    }
-},
-{
-    ui = {
-        icons = {
-            cmd = "⌘",
-            config = "🛠",
-            event = "📅",
-            ft = "📂",
-            init = "⚙",
-            keys = "🗝",
-            plugin = "🔌",
-            runtime = "💻",
-            source = "📄",
-            start = "🚀",
-            task = "📌",
-            lazy = "💤 ",
-        },
     },
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    }
 })
