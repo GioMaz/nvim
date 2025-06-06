@@ -35,6 +35,8 @@ vim.keymap.set("n", "mc", ":make clean<CR>")
 -- map Q <Nop>
 vim.keymap.set("n", "Q", "<Nop")
 
+-- vim.g.mapleader = "<Tab>"
+
 -- autocmd TermOpen * setlocal listchars = nonumber norelativenumber
 --
 -- augroup YankHighlight
